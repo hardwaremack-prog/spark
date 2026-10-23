@@ -1,0 +1,4 @@
+1.0.0  (October 22, 2026)
+- First release: offline voice chat tuned for an RTX 3050 (6 GB)
+- Push to talk / Hands-free, interrupt by talking, headset picker
+- One-click updates from the gear menu or the Update Spark icon

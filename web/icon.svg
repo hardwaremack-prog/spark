@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".5" r=".65"><stop offset="0" stop-color="#2a1a0e"/><stop offset="1" stop-color="#0c0a09"/></radialGradient>
+    <radialGradient id="c" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6d8"/><stop offset=".45" stop-color="#ffb547"/><stop offset="1" stop-color="#ff5e3a"/></radialGradient>
+    <filter id="f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <g filter="url(#f)" stroke-linecap="round">
+    <g stroke="#ffd38a" stroke-width="10">
+      <line x1="128" y1="80" x2="128" y2="30"/><line x1="128" y1="176" x2="128" y2="226"/>
+      <line x1="80" y1="128" x2="30" y2="128"/><line x1="176" y1="128" x2="226" y2="128"/>
+    </g>
+    <g stroke="#ffb547" stroke-width="8">
+      <line x1="94" y1="94" x2="66" y2="66"/><line x1="162" y1="94" x2="190" y2="66"/>
+      <line x1="94" y1="162" x2="66" y2="190"/><line x1="162" y1="162" x2="190" y2="190"/>
+    </g>
+    <circle cx="128" cy="128" r="34" fill="url(#c)"/>
+  </g>
+</svg>

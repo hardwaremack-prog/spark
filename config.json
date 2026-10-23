@@ -1,0 +1,22 @@
+{
+  "app_name": "Spark",
+  "theme": "spark",
+  "port": 8767,
+  "llm_backend": "ollama",
+  "ollama_url": "http://127.0.0.1:11434",
+  "openai_url": "http://127.0.0.1:1234/v1",
+  "model": "gemma3:4b",
+  "models_to_install": ["gemma3:4b", "llama3.2:3b"],
+  "whisper_model": "small.en",
+  "whisper_threads": 8,
+  "whisper_beam": 5,
+  "voice": "en_US-ryan-high",
+  "voices_to_install": ["en_US-ryan-high", "en_US-lessac-high", "en_GB-cori-high", "en_US-joe-medium"],
+  "speech_speed": 1.05,
+  "system_prompt": "You are Spark, an upbeat, quick-witted voice assistant running privately on this computer's own graphics card. You're friendly, curious and encouraging, great at explaining things, brainstorming, homework help, games, tech and building stuff. Keep answers short and natural to listen to, usually two or three sentences, and offer more if asked. Keep things family-friendly. If you're not sure about something, say so.",
+  "max_history": 20,
+  "open_browser": true,
+  "share_on_network": false,
+  "unload_on_switch": true,
+  "update_repo": "hardwaremack-prog/spark"
+}
