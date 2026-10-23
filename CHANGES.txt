@@ -1,3 +1,9 @@
+1.1.0  (October 22, 2026)
+- Real documents: say "make a PDF" (or tap the new document button) and it writes the
+  chat up as a clean PDF with a title and headings, saves it in Documents and opens it
+- "Save the conversation" keeps the chat exactly as it happened, as a PDF
+- More honest: it no longer claims to save, send or open files when it can't
+
 1.0.0  (October 22, 2026)
 - First release: offline voice chat tuned for an RTX 3050 (6 GB)
 - Push to talk / Hands-free, interrupt by talking, headset picker
