@@ -86,7 +86,9 @@ try {
     }
   }
 
-  & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $Dir 'shortcuts.ps1') | Out-Null
+  if (Test-Path (Join-Path $Dir 'shortcuts.ps1')) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $Dir 'shortcuts.ps1') | Out-Null
+  }
 
   if ($old -eq $new) { Say "$App is up to date ($new)." } else { Say "Updated $App`: $old -> $new" }
 
