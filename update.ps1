@@ -4,7 +4,7 @@
 #   update.ps1            update (restarts the app if it's running)
 #   update.ps1 -Pause     same, then wait for Enter (used by the desktop shortcut)
 #   update.ps1 -Restart   used by the app's own "Update now" button
-param([switch]$Pause, [switch]$Restart)
+param([switch]$Pause, [switch]$Restart, [string]$Repo = '')
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
@@ -16,13 +16,18 @@ function Say([string]$m) { [Console]::Out.WriteLine("[update] $m"); [Console]::O
 
 $cfg = Get-Content (Join-Path $Dir 'config.json') -Raw | ConvertFrom-Json
 $App = $cfg.app_name
-$Repo = $cfg.update_repo
+if (-not $Repo) { $Repo = $cfg.update_repo }
+if (-not $Repo) {
+  # Older installs don't have update_repo yet
+  $known = @{ 'Halo Converse' = 'hardwaremack-prog/halo-converse'; 'Spark' = 'hardwaremack-prog/spark'; 'Pip' = 'hardwaremack-prog/pip' }
+  $Repo = $known[$App]
+}
 $flag = Join-Path $Dir 'data\updating.flag'
 $tmp = $null
 $code = 0
 
 try {
-  if (-not $Repo) { throw "No update_repo in config.json" }
+  if (-not $Repo) { throw "Don't know where to get updates for '$App'" }
   New-Item -ItemType Directory -Force (Join-Path $Dir 'data') | Out-Null
   $old = '1.0.0'
   if (Test-Path (Join-Path $Dir 'VERSION')) { $old = (Get-Content (Join-Path $Dir 'VERSION') -Raw).Trim() }
